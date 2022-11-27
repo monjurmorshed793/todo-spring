@@ -3,8 +3,9 @@ services:
   postgresql:
     image: postgres:latest
     volumes:
-      - ~/volumes/jhipster/todo/postgresql/:/var/lib/postgresql/data/
+      - ~/volumes/morshed/todo/postgresql/:/var/lib/postgresql/data/
     environment:
+      - POSTGRES_DB=todo
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=123456
       - POSTGRES_HOST_AUTH_METHOD=trust
