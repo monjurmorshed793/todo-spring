@@ -9,4 +9,7 @@
 		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
 		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
     <include file="db/changelog/2022/11/28-01-changelog.xml"/>
+    <include file="db/changelog/2022/11/28-02-roleData.xml"/>
+    <include file="db/changelog/2022/11/28-03-changelog-initial-user-data.xml"/>
+    <include file="db/changelog/2022/11/28-04-changelog-constraint-removed.xml"/>
 </databaseChangeLog>

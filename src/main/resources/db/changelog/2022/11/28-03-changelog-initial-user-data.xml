@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="1" author="Monjur-E-Morshed">
+        <insert tableName="todo_user">
+            <column name="id" value="8ac3ddde-6a9b-4329-9aa1-308ed9cee2a5"/>
+            <column name="email" value="monjurmorshed793@gmail.com"/>
+            <column name="first_name" value="Monjur"/>
+            <column name="last_name" value="Morshed"/>
+            <column name="is_account_blocked" value="N"/>
+            <column name="is_account_expired" value="N"/>
+            <column name="is_enabled" value="Y"/>
+            <column name="password" value="$2a$10$kkByG5oHna4AnRRAU/pBleuIVhaAcnWk0REUwBuy8Q4tHiaFfVGpm"/>
+        </insert>
+    </changeSet>
+    <changeSet id="2" author="Monjur-E-Morshed">
+        <insert tableName="todo_user_roles">
+            <column name="user_id" value="8ac3ddde-6a9b-4329-9aa1-308ed9cee2a5"/>
+            <column name="roles_id" value="3a147e5a-953d-493a-9c15-1a59e03e4d54"/>
+        </insert>
+    </changeSet>
+    <changeSet id="3" author="Monjur-E-Morshed">
+        <insert tableName="todo_user_roles">
+            <column name="user_id" value="8ac3ddde-6a9b-4329-9aa1-308ed9cee2a5"/>
+            <column name="roles_id" value="410eb73c-2f44-433f-aca7-09a582c959c0"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

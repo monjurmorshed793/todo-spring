@@ -14,20 +14,30 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
     @Column(length = 50, nullable = false, unique = true)
     private String email;
-    @Column(length = 25, nullable = false)
+
+    @Column(name = "first_name", length = 25, nullable = false)
     private String firstName;
-    @Column(length = 25)
+
+    @Column(name="last_name", length = 25)
     private String lastName;
+
     private String password;
+
     @Convert(converter = YesNoConverter.class)
+    @Column(name="is_account_expired")
     private Boolean isAccountExpired;
+
     @Convert(converter = YesNoConverter.class)
+    @Column(name="is_account_blocked")
     private Boolean isAccountBlocked;
-    @Column(nullable = false)
+
+    @Column(nullable = false, name = "is_enabled")
     @Convert(converter = YesNoConverter.class)
     private Boolean isEnabled;
-    @OneToMany(fetch = FetchType.EAGER)
+
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
 }

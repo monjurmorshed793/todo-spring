@@ -21,21 +21,21 @@
             <column name="email" type="VARCHAR(50)">
                 <constraints nullable="false"/>
             </column>
-            <column name="firstName" type="VARCHAR(25)">
+            <column name="first_name" type="VARCHAR(25)">
                 <constraints nullable="false"/>
             </column>
-            <column name="lastName" type="VARCHAR(25)"/>
+            <column name="last_name" type="VARCHAR(25)"/>
             <column name="password" type="VARCHAR(255)"/>
-            <column name="isAccountExpired" type="CHAR"/>
-            <column name="isAccountBlocked" type="CHAR"/>
-            <column name="isEnabled" type="CHAR">
+            <column name="is_account_expired" type="CHAR"/>
+            <column name="is_account_blocked" type="CHAR"/>
+            <column name="is_enabled" type="CHAR">
                 <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
     <changeSet id="1669619375444-3" author="monju (generated)">
         <createTable tableName="todo_user_roles">
-            <column name="User_id" type="UUID">
+            <column name="user_id" type="UUID">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="pk_todo_user_roles"/>
             </column>
             <column name="roles_id" type="UUID">
