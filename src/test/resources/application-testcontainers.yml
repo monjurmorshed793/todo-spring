@@ -11,13 +11,11 @@ spring:
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
-  flyway:
-    enabled: false
-
-
   jpa:
     hibernate:
       ddl-auto: none
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
 
 jwt:
   private.key: classpath:app.key

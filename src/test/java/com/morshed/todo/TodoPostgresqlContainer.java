@@ -3,7 +3,7 @@ package com.morshed.todo;
 import org.testcontainers.containers.PostgreSQLContainer;
 
 public class TodoPostgresqlContainer extends PostgreSQLContainer<TodoPostgresqlContainer> {
-    private static final String IMAGE_VERSION="postgres:11.1";
+    private static final String IMAGE_VERSION="postgres:9.6.12";
     private static TodoPostgresqlContainer container;
     private static String db_url = "jdbc:tc:postgresql:///todo";
     private static String db_username = "root";

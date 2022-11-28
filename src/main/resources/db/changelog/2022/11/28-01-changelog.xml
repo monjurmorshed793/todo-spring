@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1669619375444-1" author="monju (generated)">
+        <createTable tableName="role">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_role"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1669619375444-2" author="monju (generated)">
+        <createTable tableName="todo_user">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_todo_user"/>
+            </column>
+            <column name="email" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="firstName" type="VARCHAR(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastName" type="VARCHAR(25)"/>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="isAccountExpired" type="CHAR"/>
+            <column name="isAccountBlocked" type="CHAR"/>
+            <column name="isEnabled" type="CHAR">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1669619375444-3" author="monju (generated)">
+        <createTable tableName="todo_user_roles">
+            <column name="User_id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_todo_user_roles"/>
+            </column>
+            <column name="roles_id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_todo_user_roles"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1669619375444-4" author="monju (generated)">
+        <addUniqueConstraint columnNames="email" constraintName="uc_todo_user_email" tableName="todo_user"/>
+    </changeSet>
+    <changeSet id="1669619375444-5" author="monju (generated)">
+        <addUniqueConstraint columnNames="roles_id" constraintName="uc_todo_user_roles_roles"
+                             tableName="todo_user_roles"/>
+    </changeSet>
+    <changeSet id="1669619375444-6" author="monju (generated)">
+        <addForeignKeyConstraint baseColumnNames="roles_id" baseTableName="todo_user_roles"
+                                 constraintName="fk_toduserol_on_role" referencedColumnNames="id"
+                                 referencedTableName="role"/>
+    </changeSet>
+    <changeSet id="1669619375444-7" author="monju (generated)">
+        <addForeignKeyConstraint baseColumnNames="User_id" baseTableName="todo_user_roles"
+                                 constraintName="fk_toduserol_on_user" referencedColumnNames="id"
+                                 referencedTableName="todo_user"/>
+    </changeSet>
+
+</databaseChangeLog>
