@@ -52,7 +52,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/*").authenticated()
                         .anyRequest().permitAll()
                 )
-                .csrf((csrf) -> csrf.ignoringRequestMatchers("/token", "/api/login"))
+                .csrf((csrf) -> csrf.ignoringRequestMatchers("/token", "/api/login", "/swagger-ui.html", "/v3/api-docs"))
                 .userDetailsService(userDetailsService)
                 .httpBasic(Customizer.withDefaults())
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)

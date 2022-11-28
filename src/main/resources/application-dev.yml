@@ -21,3 +21,6 @@ jwt:
   public.key: classpath:app.pub
   token:
     expiration: 30
+management:
+  endpoints:
+    enabled-by-default: true
